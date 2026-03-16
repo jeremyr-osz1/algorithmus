@@ -1,14 +1,42 @@
-"use strict";
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: src/renderer.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: src/renderer.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
 import { collectStepEdges } from "./graph.js";
 
 /**
  * Compute node screen positions based on lat/lon bounds.
- * @param {Array<{id:number, lat:number, lon:number}>} nodes
+ * @param {Array&lt;{id:number, lat:number, lon:number}>} nodes
  * @param {number} width
  * @param {number} height
  * @param {number} padding
- * @returns {Map<number, {x:number, y:number}>}
+ * @returns {Map&lt;number, {x:number, y:number}>}
  */
 export function computePositions(nodes, width, height, padding) {
     const lats = nodes.map((node) => node.lat);
@@ -43,7 +71,7 @@ export function computePositions(nodes, width, height, padding) {
  * Draw all base edges.
  * @param {CanvasRenderingContext2D} ctx
  * @param {Array} edges
- * @param {Map<number, {x:number, y:number}>} positions
+ * @param {Map&lt;number, {x:number, y:number}>} positions
  * @param {string} color
  * @param {number} width
  */
@@ -70,8 +98,8 @@ export function drawEdges(ctx, edges, positions, color, width) {
 /**
  * Draw edge keys with dashed lines.
  * @param {CanvasRenderingContext2D} ctx
- * @param {Set<string>} keys
- * @param {Map<number, {x:number, y:number}>} positions
+ * @param {Set&lt;string>} keys
+ * @param {Map&lt;number, {x:number, y:number}>} positions
  * @param {string} color
  * @param {number} width
  * @param {number[]} dash
@@ -105,12 +133,12 @@ export function drawEdgeKeys(ctx, keys, positions, color, width, dash) {
  * Draw a path as a solid line.
  * @param {CanvasRenderingContext2D} ctx
  * @param {number[]} path
- * @param {Map<number, {x:number, y:number}>} positions
+ * @param {Map&lt;number, {x:number, y:number}>} positions
  * @param {string} color
  * @param {number} width
  */
 export function drawPath(ctx, path, positions, color, width) {
-    if (!path || path.length < 2) {
+    if (!path || path.length &lt; 2) {
         return;
     }
 
@@ -125,7 +153,7 @@ export function drawPath(ctx, path, positions, color, width) {
     }
     ctx.moveTo(first.x, first.y);
 
-    for (let i = 1; i < path.length; i += 1) {
+    for (let i = 1; i &lt; path.length; i += 1) {
         const point = positions.get(path[i]);
         if (!point) {
             continue;
@@ -139,8 +167,8 @@ export function drawPath(ctx, path, positions, color, width) {
 /**
  * Draw nodes and labels.
  * @param {CanvasRenderingContext2D} ctx - The canvas rendering context.
- * @param {Array<{id:number}>} nodes - The array of nodes to draw.
- * @param {Map<number, {x:number, y:number}>} positions - The positions of the nodes.
+ * @param {Array&lt;{id:number}>} nodes - The array of nodes to draw.
+ * @param {Map&lt;number, {x:number, y:number}>} positions - The positions of the nodes.
  * @param {Object} highlights - The highlighted nodes.
  * @param {number|null} highlights.startId - The start node ID or null.
  * @param {number|null} highlights.targetId - The target node ID or null.
@@ -194,7 +222,7 @@ export function drawNodes(ctx, nodes, positions, highlights) {
  * @param {{width:number, height:number}} viewport
  * @param {Array} edges
  * @param {Array} nodes
- * @param {Map<number, {x:number, y:number}>} positions
+ * @param {Map&lt;number, {x:number, y:number}>} positions
  * @param {object} options
  */
 export function drawGraph(ctx, viewport, edges, nodes, positions, options) {
@@ -237,3 +265,26 @@ export function drawGraph(ctx, viewport, edges, nodes, positions, options) {
 
     drawNodes(ctx, nodes, positions, { startId, targetId });
 }
+</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aStar">aStar</a></li><li><a href="global.html#adjacencyMatrix">adjacencyMatrix</a></li><li><a href="global.html#buildGraph">buildGraph</a></li><li><a href="global.html#buildPath">buildPath</a></li><li><a href="global.html#cacheUi">cacheUi</a></li><li><a href="global.html#collectStepEdges">collectStepEdges</a></li><li><a href="global.html#computePositions">computePositions</a></li><li><a href="global.html#coordinates">coordinates</a></li><li><a href="global.html#dijkstra">dijkstra</a></li><li><a href="global.html#drawEdgeKeys">drawEdgeKeys</a></li><li><a href="global.html#drawEdges">drawEdges</a></li><li><a href="global.html#drawFinalPaths">drawFinalPaths</a></li><li><a href="global.html#drawGraph">drawGraph</a></li><li><a href="global.html#drawNodes">drawNodes</a></li><li><a href="global.html#drawPath">drawPath</a></li><li><a href="global.html#edgeKey">edgeKey</a></li><li><a href="global.html#fillNodeSelects">fillNodeSelects</a></li><li><a href="global.html#getSelectedIds">getSelectedIds</a></li><li><a href="global.html#haversineKm">haversineKm</a></li><li><a href="global.html#heuristic">heuristic</a></li><li><a href="global.html#initGraph">initGraph</a></li><li><a href="global.html#isNodeValid">isNodeValid</a></li><li><a href="global.html#onRunClick">onRunClick</a></li><li><a href="global.html#redrawCurrent">redrawCurrent</a></li><li><a href="global.html#renderGraph">renderGraph</a></li><li><a href="global.html#resizeCanvas">resizeCanvas</a></li><li><a href="global.html#runAStar">runAStar</a></li><li><a href="global.html#runDijkstra">runDijkstra</a></li><li><a href="global.html#setupResize">setupResize</a></li><li><a href="global.html#setupUi">setupUi</a></li><li><a href="global.html#startAnimation">startAnimation</a></li><li><a href="global.html#stopAnimation">stopAnimation</a></li><li><a href="global.html#toRadians">toRadians</a></li><li><a href="global.html#updateDelayLabel">updateDelayLabel</a></li><li><a href="global.html#updateStats">updateStats</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Mar 16 2026 10:43:36 GMT+0100 (Mitteleuropäische Normalzeit)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>

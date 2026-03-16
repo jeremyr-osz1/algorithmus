@@ -156,3 +156,8 @@ button:disabled {
         grid-template-columns: 1fr;
     }
 }
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+}

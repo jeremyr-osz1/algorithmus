@@ -4,7 +4,7 @@
     "private": true,
     "description": "Dijkstra and A* pathfinding visualization",
     "scripts": {
-        "docs:documentation": "documentation build app.js -f html -o docs/documentation",
+        "docs:documentation": "documentation build app.js src/ -f html -o docs/documentation",
         "docs:jsdoc": "jsdoc -c jsdoc.json",
         "docs": "npm run docs:documentation && npm run docs:jsdoc",
         "tests": "cypress run",

@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: src/dijkstra.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,78 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: src/dijkstra.js</h1>
 
     
 
 
 
     
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
 
+import { buildPath } from "./graph.js";
 
-    <h3> </h3>
+/**
+ * Dijkstra algorithm with step logging.
+ * @param {number} startId
+ * @param {number} targetId
+ * @param {Array} adjacency
+ * @returns {{distance:number, path:number[], steps:object[], edgesExamined:number}}
+ */
+export function dijkstra(startId, targetId, adjacency) {
+    const size = adjacency.length;
+    const dist = Array(size).fill(Infinity);
+    const prev = Array(size).fill(null);
+    const visited = Array(size).fill(false);
+    const steps = [];
+    let edgesExamined = 0;
 
+    dist[startId] = 0;
 
+    for (let i = 0; i &lt; size; i += 1) {
+        let current = null;
+        let currentDist = Infinity;
 
+        for (let j = 0; j &lt; size; j += 1) {
+            if (!visited[j] &amp;&amp; dist[j] &lt; currentDist) {
+                currentDist = dist[j];
+                current = j;
+            }
+        }
 
+        if (current === null) {
+            break;
+        }
 
+        if (current === targetId) {
+            break;
+        }
 
+        visited[current] = true;
 
+        adjacency[current].forEach((neighbor) => {
+            edgesExamined += 1;
+            steps.push({ from: current, to: neighbor.to });
+            const alt = dist[current] + neighbor.weight;
+            if (alt &lt; dist[neighbor.to]) {
+                dist[neighbor.to] = alt;
+                prev[neighbor.to] = current;
+            }
+        });
+    }
 
-
-
-    
-
-
-
-
-
+    return {
+        distance: dist[targetId],
+        path: buildPath(prev, startId, targetId),
+        steps,
+        edgesExamined
+    };
+}
+</code></pre>
+        </article>
+    </section>
 
 
 

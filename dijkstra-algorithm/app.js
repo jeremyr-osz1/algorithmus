@@ -456,7 +456,9 @@ function renderGraph(options) {
 
 /**
  * Read the currently selected node ids.
- * @returns {{startId:number|null, targetId:number|null}}
+ * @returns {Object} An object containing the selected node IDs.
+ * @returns {number|null} return.startId - The start node ID or null if invalid.
+ * @returns {number|null} return.targetId - The target node ID or null if invalid.
  */
 function getSelectedIds() {
     if (!appState.ui.startSelect || !appState.ui.targetSelect) {

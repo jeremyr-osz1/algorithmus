@@ -1,6 +1,7 @@
 {
     "source": {
-        "include": ["app.js"]
+        "include": ["app.js", "src/"],
+        "includePattern": ".+\\.js$"
     },
     "opts": {
         "destination": "docs/jsdoc",
