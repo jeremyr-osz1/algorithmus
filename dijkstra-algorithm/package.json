@@ -6,10 +6,15 @@
     "scripts": {
         "docs:documentation": "documentation build app.js -f html -o docs/documentation",
         "docs:jsdoc": "jsdoc -c jsdoc.json",
-        "docs": "npm run docs:documentation && npm run docs:jsdoc"
+        "docs": "npm run docs:documentation && npm run docs:jsdoc",
+        "tests": "cypress run",
+        "test:open": "cypress open"
     },
     "devDependencies": {
         "documentation": "^14.0.0",
         "jsdoc": "^4.0.2"
+    },
+    "dependencies": {
+        "cypress": "^15.12.0"
     }
 }

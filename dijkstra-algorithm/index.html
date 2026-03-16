@@ -21,41 +21,35 @@
 
                 <h2>Algorithmus</h2>
                 <fieldset>
-                    <div>
-                        <span>
-                            <input
-                                type="radio"
-                                id="algoDijkstra"
-                                name="algorithm"
-                                value="dijkstra"
-                                checked
-                            />
-                            <label for="algoDijkstra">Dijkstra-Algorithmus</label>
-                        </span>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <input
+                            type="radio"
+                            id="algoDijkstra"
+                            name="algorithm"
+                            value="dijkstra"
+                            checked
+                        />
+                        <label for="algoDijkstra">Dijkstra-Algorithmus</label>
                     </div>
 
-                    <div>
-                        <span>
-                            <input
-                                type="radio"
-                                id="algoAStar"
-                                name="algorithm"
-                                value="astar"
-                            />
-                            <label for="algoAStar">A* Algorithmus</label>
-                        </span>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <input
+                            type="radio"
+                            id="algoAStar"
+                            name="algorithm"
+                            value="astar"
+                        />
+                        <label for="algoAStar">A* Algorithmus</label>
                     </div>
 
-                    <div>
-                        <span>
-                            <input
-                                type="radio"
-                                id="algoBoth"
-                                name="algorithm"
-                                value="both"
-                            />
-                            <label for="algoBoth">Beide (Vergleich)</label>
-                        </span>
+                    <div style="display: flex; align-items: center; gap: 8px;">
+                        <input
+                            type="radio"
+                            id="algoBoth"
+                            name="algorithm"
+                            value="both"
+                        />
+                        <label for="algoBoth">Beide (Vergleich)</label>
                     </div>
                 </fieldset>
 
@@ -117,6 +111,6 @@
             </div>
         </div>
 
-        <script src="app.js"></script>
+        <script type="module" src="app.js"></script>
     </body>
 </html>
