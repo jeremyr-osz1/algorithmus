@@ -9,7 +9,11 @@ import { buildPath } from "./graph.js";
  * @param {number} targetId
  * @param {Array} adjacency
  * @param {Array} nodes
- * @returns {{distance:number, path:number[], steps:object[], edgesExamined:number}}
+ * @returns {Object} return - The result object containing distance, path, steps, and edges examined.
+ * @returns {number} return.distance - The total distance of the found path or Infinity if no path exists.
+ * @returns {number[]} return.path - An array of node IDs representing the path from start to target.
+ * @returns {object[]} return.steps - An array of step objects, each containing 'from' and 'to' node IDs.
+ * @returns {number} return.edgesExamined - The total number of edges examined during the search.
  */
 export function aStar(startId, targetId, adjacency, nodes) {
     const size = adjacency.length;

@@ -232,7 +232,7 @@
     
 
     
-    <h4 class="name" id="aStar"><span class="type-signature"></span>aStar<span class="signature">(startId, targetId, adjacency, nodes)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="aStar"><span class="type-signature"></span>aStar<span class="signature">(startId, targetId, adjacency, nodes)</span><span class="type-signature"> &rarr; {Object|number|Array.&lt;number>|Array.&lt;object>|number}</span></h4>
     
 
     
@@ -402,7 +402,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_astar.js.html">src/astar.js</a>, <a href="src_astar.js.html#line14">line 14</a>
+        <a href="src_astar.js.html">src/astar.js</a>, <a href="src_astar.js.html#line18">line 18</a>
     </li></ul></dd>
     
 
@@ -428,8 +428,12 @@
 
 
 <h5>Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    return - The result object containing distance, path, steps, and edges examined.
+</div>
 
-        
 
 
 <dl>
@@ -443,8 +447,88 @@
 
     </dd>
 </dl>
-
+</li>
     
+        <li>
+<div class="param-desc">
+    return.distance - The total distance of the found path or Infinity if no path exists.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.path - An array of node IDs representing the path from start to target.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;number></span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.steps - An array of step objects, each containing 'from' and 'to' node IDs.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;object></span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.edgesExamined - The total number of edges examined during the search.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
@@ -456,7 +540,7 @@
     
 
     
-    <h4 class="name" id="buildGraph"><span class="type-signature"></span>buildGraph<span class="signature">(coordinates, adjacencyMatrix)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="buildGraph"><span class="type-signature"></span>buildGraph<span class="signature">(coordinates, adjacencyMatrix)</span><span class="type-signature"> &rarr; {Object|Array.&lt;{id:number, lat:number, lon:number}>|Array.&lt;Array.&lt;{to:number, weight:number}>>|Array.&lt;{from:number, to:number, weight:number}>}</span></h4>
     
 
     
@@ -580,7 +664,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line11">line 11</a>
+        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line14">line 14</a>
     </li></ul></dd>
     
 
@@ -606,8 +690,12 @@
 
 
 <h5>Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    An object containing the graph data structures.
+</div>
 
-        
 
 
 <dl>
@@ -621,8 +709,68 @@
 
     </dd>
 </dl>
-
+</li>
     
+        <li>
+<div class="param-desc">
+    return.nodes - The array of node objects.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;{id:number, lat:number, lon:number}></span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.adjacency - The adjacency list with weights.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;Array.&lt;{to:number, weight:number}>></span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.edges - The array of edge objects with weights.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;{from:number, to:number, weight:number}></span>
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
@@ -684,7 +832,7 @@
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;(number|null)></span>
 
 
             
@@ -781,7 +929,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line42">line 42</a>
+        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line45">line 45</a>
     </li></ul></dd>
     
 
@@ -809,6 +957,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    The path from startId to targetId, or empty if no path exists.
+</div>
+
 
 
 <dl>
@@ -973,7 +1125,7 @@
             <td class="type">
             
                 
-<span class="param-type">Array</span>
+<span class="param-type">Array.&lt;{from:number, to:number}></span>
 
 
             
@@ -1047,7 +1199,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line81">line 81</a>
+        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line84">line 84</a>
     </li></ul></dd>
     
 
@@ -1075,6 +1227,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    A set of edge keys representing the edges used in the steps up to the limit.
+</div>
+
 
 
 <dl>
@@ -1325,7 +1481,7 @@
     
 
     
-    <h4 class="name" id="dijkstra"><span class="type-signature"></span>dijkstra<span class="signature">(startId, targetId, adjacency)</span><span class="type-signature"> &rarr; {Object}</span></h4>
+    <h4 class="name" id="dijkstra"><span class="type-signature"></span>dijkstra<span class="signature">(startId, targetId, adjacency)</span><span class="type-signature"> &rarr; {Object|number|Array.&lt;number>|Array.&lt;object>|number}</span></h4>
     
 
     
@@ -1472,7 +1628,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_dijkstra.js.html">src/dijkstra.js</a>, <a href="src_dijkstra.js.html#line12">line 12</a>
+        <a href="src_dijkstra.js.html">src/dijkstra.js</a>, <a href="src_dijkstra.js.html#line16">line 16</a>
     </li></ul></dd>
     
 
@@ -1498,8 +1654,12 @@
 
 
 <h5>Returns:</h5>
+<ul>
+        <li>
+<div class="param-desc">
+    return - The result object containing distance, path, steps, and edges examined.
+</div>
 
-        
 
 
 <dl>
@@ -1513,8 +1673,88 @@
 
     </dd>
 </dl>
-
+</li>
     
+        <li>
+<div class="param-desc">
+    return.distance - The total distance of the found path or Infinity if no path exists.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.path - An array of node IDs representing the path from start to target.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;number></span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.steps - An array of step objects, each containing 'from' and 'to' node IDs.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">Array.&lt;object></span>
+
+
+    </dd>
+</dl>
+</li>
+    
+        <li>
+<div class="param-desc">
+    return.edgesExamined - The total number of edges examined during the search.
+</div>
+
+
+
+<dl>
+    <dt>
+        Type
+    </dt>
+    <dd>
+        
+<span class="param-type">number</span>
+
+
+    </dd>
+</dl>
+</li>
+    </ul>
 
 
 
@@ -2178,7 +2418,79 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>width</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The width of the canvas.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The height of the canvas.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -2201,7 +2513,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The array of edges in the graph.</td>
         </tr>
 
     
@@ -2224,7 +2536,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The array of nodes in the graph.</td>
         </tr>
 
     
@@ -2247,7 +2559,7 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The positions of the nodes.</td>
         </tr>
 
     
@@ -2260,7 +2572,7 @@
             <td class="type">
             
                 
-<span class="param-type">object</span>
+<span class="param-type">Object</span>
 
 
             
@@ -2270,7 +2582,394 @@
 
             
 
-            <td class="description last"></td>
+            <td class="description last">The options for drawing the graph.
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+        <th>Attributes</th>
+        
+
+        
+        <th>Default</th>
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>showSteps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">boolean</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    false
+                
+                </td>
+            
+
+            <td class="description last">Whether to visualize algorithm steps.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>stepIndex</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    0
+                
+                </td>
+            
+
+            <td class="description last">The current step index to visualize.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dijkstraSteps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    []
+                
+                </td>
+            
+
+            <td class="description last">The recorded steps of Dijkstra's algorithm.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>astarSteps</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    []
+                
+                </td>
+            
+
+            <td class="description last">The recorded steps of A* algorithm.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dijkstraPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    []
+                
+                </td>
+            
+
+            <td class="description last">The final path found by Dijkstra's algorithm.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>astarPath</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    []
+                
+                </td>
+            
+
+            <td class="description last">The final path found by A* algorithm.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>mode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    "both"
+                
+                </td>
+            
+
+            <td class="description last">Which algorithm to visualize ("dijkstra", "astar", or "both").</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>startId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">The start node ID to highlight.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>targetId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+|
+
+<span class="param-type">null</span>
+
+
+            
+            </td>
+
+            
+                <td class="attributes">
+                
+                    &lt;optional><br>
+                
+
+                
+
+                
+                </td>
+            
+
+            
+                <td class="default">
+                
+                    null
+                
+                </td>
+            
+
+            <td class="description last">The target node ID to highlight.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -2311,7 +3010,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line200">line 200</a>
+        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line211">line 211</a>
     </li></ul></dd>
     
 
@@ -2984,7 +3683,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line71">line 71</a>
+        <a href="src_graph.js.html">src/graph.js</a>, <a href="src_graph.js.html#line74">line 74</a>
     </li></ul></dd>
     
 
@@ -3012,6 +3711,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    A string key representing the edge, normalized so that the smaller ID comes first.
+</div>
+
 
 
 <dl>
@@ -3342,7 +4045,79 @@
 
             
 
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
             <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -3365,7 +4140,79 @@
 
             
 
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
             <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -3406,7 +4253,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_math.js.html">src/math.js</a>, <a href="src_math.js.html#line18">line 18</a>
+        <a href="src_math.js.html">src/math.js</a>, <a href="src_math.js.html#line22">line 22</a>
     </li></ul></dd>
     
 
@@ -3434,6 +4281,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    Distance in kilometers
+</div>
+
 
 
 <dl>
@@ -3520,7 +4371,79 @@
 
             
 
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
             <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -3543,7 +4466,79 @@
 
             
 
+            <td class="description last">
+                <h6>Properties</h6>
+                
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>lat</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
             <td class="description last"></td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lon</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"></td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+            </td>
         </tr>
 
     
@@ -3584,7 +4579,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_math.js.html">src/math.js</a>, <a href="src_math.js.html#line39">line 39</a>
+        <a href="src_math.js.html">src/math.js</a>, <a href="src_math.js.html#line47">line 47</a>
     </li></ul></dd>
     
 
@@ -3612,6 +4607,10 @@
 <h5>Returns:</h5>
 
         
+<div class="param-desc">
+    Distance in kilometers
+</div>
+
 
 
 <dl>
@@ -5487,7 +6486,7 @@
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Mar 16 2026 10:43:36 GMT+0100 (Mitteleuropäische Normalzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Mar 16 2026 11:00:01 GMT+0100 (Mitteleuropäische Normalzeit)
 </footer>
 
 <script> prettyPrint(); </script>

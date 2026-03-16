@@ -11,9 +11,13 @@ export function toRadians(value) {
 
 /**
  * Haversine distance between two points in km.
- * @param {{lat:number, lon:number}} a
- * @param {{lat:number, lon:number}} b
- * @returns {number}
+ * @param {Object} a
+ * @param {number} a.lat
+ * @param {number} a.lon
+ * @param {Object} b
+ * @param {number} b.lat
+ * @param {number} b.lon
+ * @returns {number} Distance in kilometers
  */
 export function haversineKm(a, b) {
     const radius = 6371;
@@ -32,9 +36,13 @@ export function haversineKm(a, b) {
 
 /**
  * Straight-line heuristic for A* (haversine distance).
- * @param {{lat:number, lon:number}} a
- * @param {{lat:number, lon:number}} b
- * @returns {number}
+ * @param {Object} a
+ * @param {number} a.lat
+ * @param {number} a.lon
+ * @param {Object} b
+ * @param {number} b.lat
+ * @param {number} b.lon
+ * @returns {number} Distance in kilometers
  */
 export function heuristic(a, b) {
     return haversineKm(a, b);
