@@ -1,0 +1,15 @@
+{
+    "name": "dijkstra-algorithm",
+    "version": "1.0.0",
+    "private": true,
+    "description": "Dijkstra and A* pathfinding visualization",
+    "scripts": {
+        "docs:documentation": "documentation build app.js -f html -o docs/documentation",
+        "docs:jsdoc": "jsdoc -c jsdoc.json",
+        "docs": "npm run docs:documentation && npm run docs:jsdoc"
+    },
+    "devDependencies": {
+        "documentation": "^14.0.0",
+        "jsdoc": "^4.0.2"
+    }
+}

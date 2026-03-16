@@ -1,0 +1,56 @@
+# Das hier Teile einer größeren Aufgabe, Abschnitte einer Gesamtaufgabe. In diesem Ordner findest du auch noch andere Ressourcen und auch einen großen Teil der Aufgaben in "Mock-Up" Sketch sind auch schon erledigt. Also gucke, analysiere und lerne wie man das am besten lösen kann. Es sollte bei purem HTML, CSS und JS bleiben, nichts anderes. Außerdem sollte es verständlich und leicht erklärbar sein. (Übersichtlicher Code und gut erkennbar was genau wo Passiert bspw. guter Hinweis zu Namen von Variablen usw. sollten sinnvoll gewählt sein).
+
+
+
+TEIL 1:
+Erstellen Sie die nötige Graphenstruktur (möglicherweise in Verbindung mit einer Adjazenzmatrix), um den Dikstra-Algorithmus zur Findung eines kürzesten Weges zu implementieren und diesen auch graphisch darzustellen.
+
+Eine Muster koordinaten.csv Datei liegt bereits vor.
+
+Zur Berechnung der Entfernung zwischen zwei Punkten können Sie sich z. B. hier informieren:
+
+https://www.kompf.de/gps/distcalc.html
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+TEIL 2:
+Implementieren Sie den Dijkstra-Algorithmus, um den kürzesten Weg zwischen zwei Punkten auf dem Graphen (siehe Aufgabe 1) zu finden.
+
+Implementieren Sie ihn so, dass Sie später die Möglichkeit haben, die jeweils ausgewählten Pfade graphisch darzustellen.
+
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+TEIL 3:
+Der Dijkstra-Algorithmus kann verbessert werden, in dem Wege in die "falsche Richtung" erst später untersucht werden oder nicht vollständig in betracht gezogen werden. Implementieren Sie dazu den A*-Algorithmus.
+
+Löschen Sie den Dijkstra-Algorithmus nicht, da diese später verglichen werden sollen.
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+TEIL 4:
+Erstellen Sie ein Mock-Up oder Sketch zu einem Programm mit den folgenden Funktionen:
+
+- Es zeigt die Karte aus Aufgabe 1
+- Es kann ein Startpunkt und Zielpunkt ausgewählt werden
+- Es können der klassische Dijkstra-Algorithmus, A*-Algorithmus oder beide zur Berechnung des kürzesten Weges ausgewählt werden
+- Es soll der kürzeste Weg visuell dargestellt werden (mit Länge, benötigter Rechenzeit und Anzahl der untersuchten Kanten)
+- Es kann eingestellt werden, ob die Zwischenschritte bei der Ermittlung des kürzesten Weges angezeigt werden, dabei soll auch eingestellt werden können, wie viel Zeit zwischen den Schritten vergeht (Schieberegler oÄ ist sinnvoll)
+- Sollen beide Algorithmen zur Berechnung des kürzesten Weges benutzt werden, soll der Unterschied auch visuell "schritt-synchron" erkennbar sein
+- Im Falle beider Algorithmen soll am Ende eine vergleichende Statistik angezeigt werden (Rechenzeit und Anzahl untersuchte Kanten)
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+TEIL 5:
+Implementieren Sie das Programm aus Aufgabe 4.
+
+Benutzen Sie ein Framework, mit dem eine Entwicklerdokumentation erstellt werden kann (es muss nicht zwingend ein Framework sein, nur eine art tool oder library das automatisch eine Dokumentatution erstellt als Comments und als README.md). 
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------
+TEIL 6:
+
+Formulieren Sie Testfälle für die Software (hinsichtlich der GUI, UX und den Algorithmen) und entwerfen 3 Unittests (kann in einer art extra .md datei gemacht werden)
+
+
+

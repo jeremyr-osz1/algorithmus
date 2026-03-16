@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Routenberechnung - Dijkstra & A*</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <header>Routenberechnung - Dijkstra & A*</header>
+
+        <div class="main">
+            <div class="sidebar">
+                <h2>Start & Ziel</h2>
+
+                <label for="startSelect">Startpunkt</label>
+                <select id="startSelect"></select>
+
+                <label for="targetSelect">Zielpunkt</label>
+                <select id="targetSelect"></select>
+
+                <h2>Algorithmus</h2>
+                <fieldset>
+                    <div>
+                        <span>
+                            <input
+                                type="radio"
+                                id="algoDijkstra"
+                                name="algorithm"
+                                value="dijkstra"
+                                checked
+                            />
+                            <label for="algoDijkstra">Dijkstra-Algorithmus</label>
+                        </span>
+                    </div>
+
+                    <div>
+                        <span>
+                            <input
+                                type="radio"
+                                id="algoAStar"
+                                name="algorithm"
+                                value="astar"
+                            />
+                            <label for="algoAStar">A* Algorithmus</label>
+                        </span>
+                    </div>
+
+                    <div>
+                        <span>
+                            <input
+                                type="radio"
+                                id="algoBoth"
+                                name="algorithm"
+                                value="both"
+                            />
+                            <label for="algoBoth">Beide (Vergleich)</label>
+                        </span>
+                    </div>
+                </fieldset>
+
+                <h2>Visualisierung</h2>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="showSteps" checked />
+                    <label for="showSteps">Zwischenschritte anzeigen</label>
+                </div>
+
+                <label for="stepDelay">Zeit zwischen Schritten</label>
+                <div class="range-row">
+                    <input
+                        type="range"
+                        id="stepDelay"
+                        min="0"
+                        max="1000"
+                        step="50"
+                        value="300"
+                    />
+                    <span id="stepDelayValue">300 ms</span>
+                </div>
+
+                <button id="runButton">Berechnung starten</button>
+            </div>
+
+            <div class="map">
+                <div class="map-inner">
+                    <canvas id="mapCanvas"></canvas>
+                </div>
+            </div>
+
+            <div class="stats">
+                <div class="stat-box">
+                    <h3>Dijkstra</h3>
+                    <div class="stat-line">
+                        Distanz: <span id="dijkstraDistance">—</span>
+                    </div>
+                    <div class="stat-line">
+                        Rechenzeit: <span id="dijkstraTime">—</span>
+                    </div>
+                    <div class="stat-line">
+                        Untersuchte Kanten: <span id="dijkstraEdges">—</span>
+                    </div>
+                </div>
+
+                <div class="stat-box">
+                    <h3>A*</h3>
+                    <div class="stat-line">
+                        Distanz: <span id="astarDistance">—</span>
+                    </div>
+                    <div class="stat-line">
+                        Rechenzeit: <span id="astarTime">—</span>
+                    </div>
+                    <div class="stat-line">
+                        Untersuchte Kanten: <span id="astarEdges">—</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script src="app.js"></script>
+    </body>
+</html>
