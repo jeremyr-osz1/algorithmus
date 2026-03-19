@@ -331,15 +331,17 @@ function updateStats(result, key) {
         return;
     }
 
+    const timeTaken = `${String(result.timeMs.toFixed(2)).replace('.', ',')} ms`;
+
     if (!Number.isFinite(result.distance)) {
         distanceEl.textContent = "keine Verbindung";
-        timeEl.textContent = `${result.timeMs.toFixed(2)} ms`;
+        timeEl.textContent = timeTaken;
         edgesEl.textContent = `${result.edgesExamined}`;
         return;
     }
 
-    distanceEl.textContent = `${result.distance.toFixed(3)} km`;
-    timeEl.textContent = `${result.timeMs.toFixed(2)} ms`;
+    distanceEl.textContent = `${String(result.distance.toFixed(3)).replace('.', ',')} km`;
+    timeEl.textContent = timeTaken;
     edgesEl.textContent = `${result.edgesExamined}`;
 }
 
