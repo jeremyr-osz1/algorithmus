@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Benutzerhandbuch - Routenberechnung mit dem Dijkstra und A* Algorithmus</title>
+        <link rel="stylesheet" href="benutzerhandbuch.css" />
+    </head>
+    <body>
+        <div class="page">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Algorithmus Dokumentation</p>
+                    <p class="page-tagline">Generiertes Benutzerhandbuch fuer die lokale Webanwendung</p>
+                </div>
+                <p class="page-note">Stand: 19. März 2026 um 11:48</p>
+            </header>
+
+            <main class="doc-shell">
+                <article class="markdown-body">
+<h1 id="benutzerhandbuch">Benutzerhandbuch</h1>
+<h2 id="routenberechnung-mit-dem-dijkstra-und-a-star-algorithmus">Routenberechnung mit dem Dijkstra und A* Algorithmus</h2>
+<hr />
+<h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
+<ol start="0">
+<li><a href="#abbildungsverzeichnis">Abbildungsverzeichnis</a></li>
+<li><a href="#1-menueelemente-erklaert">Menüelemente erklärt</a></li>
+<li><a href="#2-fehlermeldungen">Fehlermeldungen</a></li>
+<li><a href="#3-quellenangaben">Quellenangaben</a></li>
+</ol>
+<h2 id="abbildungsverzeichnis">Abbildungsverzeichnis</h2>
+<ol>
+<li><a href="#image-screenshot-header">Screenshot Header</a></li>
+<li><a href="#image-screenshot-start-und-ziel">Screenshot Start & Ziel</a></li>
+<li><a href="#image-screenshot-algorithmen">Screenshot Algorithmen</a></li>
+<li><a href="#image-screenshot-visualisierung">Screenshot Visualisierung</a></li>
+<li><a href="#image-screenshot-routeninformationen">Screenshot Routeninformationen</a></li>
+</ol>
+<h2 id="1-menueelemente-erklaert">1 Menüelemente erklärt</h2>
+<p>Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum einem der Name der Anwendung <br />
+"Routenberechnung - Dijkstra &amp; A*" und zum anderen befinden sich dort Links zu wichtigen Dokumentationen des Projekts, wie z.B. die Entwicklerdokumentation und dieses Benutzerhandbuch. (siehe <a href="#image-screenshot-header">Screenshot Header</a>)</p>
+<p><strong>Header</strong>:</p>
+<ul>
+<li><strong>JSdoc verlinkung</strong>: Ein Link zur Dokumentation des Projekts, erstellt mit JSdoc</li>
+<li><strong>Benutzerhandbuch</strong>: Ein Link zu diesem Benutzerhandbuch, damit Nutzer schnell darauf zugreifen können  </li>
+</ul>
+<figure class="doc-figure"><img src="images/header.png" alt="Screenshot Header" id="image-screenshot-header" loading="lazy" width="600" height="100" /><figcaption>Screenshot Header</figcaption></figure>
+<p><strong>Start & Ziel</strong></p>
+<ul>
+<li><strong>Startpunkt</strong>: Der Startpunkt legt fest, an welchem Punkt die Routenberechnung anfangen soll</li>
+<li><strong>Endpunkt</strong>: Der Endpunkt legt das Ziel für die Routenberechnung fest.</li>
+</ul>
+<figure class="doc-figure"><img src="images/start_und_ziel.png" alt="Screenshot Start &amp; Ziel" id="image-screenshot-start-und-ziel" loading="lazy" width="233" height="126" /><figcaption>Screenshot Start &amp; Ziel</figcaption></figure>
+<p><strong>Algorithmus</strong></p>
+<ul>
+<li><strong>Dijkstra-Algorithmus</strong>: Dieses Feld sagt der Routenberechnung dass der Dijkstra-algorithmus zur Berechnung genutzt werden soll</li>
+<li><strong>A* Algorithmus</strong>: Dieses Feld sagt der Routenberechnung dass der A* Algorithmus zur Berechnung genutzt werden soll</li>
+<li><strong>Beide (Vergleich)</strong>: Dieses Feld sagt der Routenberechnung es soll beide Algorithmen zur Berechnung nutzen und diese miteinander vergleichen</li>
+</ul>
+<figure class="doc-figure"><img src="images/algorithmen.png" alt="Screenshot Algorithmen" id="image-screenshot-algorithmen" loading="lazy" width="300" height="200" /><figcaption>Screenshot Algorithmen</figcaption></figure>
+<p><strong>Visualisierung</strong></p>
+<ul>
+<li><strong>Zwischenschritte anzeigen</strong>: Aktiviert die Visualisierung der Zwischenschritte während der Routenberechnung</li>
+<li><strong>Zeit zwischen Schritten</strong>: Legt die Zeit in Millisekunden fest, die zwischen der Visualisierung der Zwischenschritte liegen soll</li>
+</ul>
+<p><strong>Berechnung starten</strong>: Startet die Routenberechnung mit den ausgewählten Einstellungen</p>
+<figure class="doc-figure"><img src="images/visualisierung.png" alt="Screenshot Visualisierung" id="image-screenshot-visualisierung" loading="lazy" width="300" height="200" /><figcaption>Screenshot Visualisierung</figcaption></figure>
+<p><strong>Routeninformationen</strong></p>
+<ul>
+<li><strong>Distanz</strong>: Zeigt die Länge der berechneten Route an</li>
+<li><strong>Berechnungszeit</strong>: Zeigt die Zeit an, die für die Berechnung der Route benötigt wurde</li>
+<li><strong>Untersuchte Knoten</strong>: Zeigt die Anzahl der Knoten an, die während der Berechnung besucht wurden</li>
+</ul>
+<figure class="doc-figure"><img src="images/routeninformationen.png" alt="Screenshot Routeninformationen" id="image-screenshot-routeninformationen" loading="lazy" /><figcaption>Screenshot Routeninformationen</figcaption></figure>
+<hr />
+<h2 id="2-fehlermeldungen">2 Fehlermeldungen</h2>
+<p>In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die während der Nutzung der Routenberechnung auftreten können:</p>
+<ul>
+<li><strong>Ausgewählte Start- oder Zielpunkt-ID ist ungültig.</strong>: Diese Fehlermeldung erscheint, wenn die ausgewählten Start- oder Zielpunkt-IDs nicht gültig sind, z.B. wenn sie außerhalb des Bereichs der verfügbaren Punkte liegen.</li>
+<li><strong>Bitte wählen Sie mindestens einen Algorithmus aus.</strong>: Diese Fehlermeldung erscheint, wenn der Benutzer versucht, die Routenberechnung zu starten, ohne einen Algorithmus auszuwählen.</li>
+<li><strong>Start- und Zielpunkt müssen unterschiedlich sein.</strong>: Diese Fehlermeldung erscheint, wenn der Benutzer versucht, die Routenberechnung zu starten, aber der ausgewählte Startpunkt und Zielpunkt identisch sind.</li>
+</ul>
+<hr />
+<h2 id="3-quellenangaben">3 Quellenangaben</h2>
+<ul>
+<li><strong>Dijkstra-Algorithmus</strong>: <a href="https://de.wikipedia.org/wiki/Dijkstra-Algorithmus" rel="noopener noreferrer" target="_blank">Wikipedia - Dijkstra-Algorithmus</a></li>
+<li><strong>A* Algorithmus</strong>: <a href="https://de.wikipedia.org/wiki/A*-Algorithmus" rel="noopener noreferrer" target="_blank">Wikipedia - A* Algorithmus</a></li>
+<li><strong>Node.js</strong>: <a href="https://nodejs.org/" rel="noopener noreferrer" target="_blank">Node.js offizielle Webseite</a> Zur umwandlung von Markdown in HTML und zur Erstellung der Entwicklerdokumentation</li>
+<li><strong>JSdoc</strong>: <a href="https://jsdoc.app/" rel="noopener noreferrer" target="_blank">JSdoc offizielle Webseite</a> Zur erstellung der Entwicklerdokumentation</li>
+<li><strong>Cypress</strong>: <a href="https://www.cypress.io/" rel="noopener noreferrer" target="_blank">Cypress offizielle Webseite</a> Zur Erstellung von End-to-End Tests (Testing der grafischen Benutzeroberfläche)</li>
+<li><strong>Showdown</strong>: <a href="https://showdownjs.com/" rel="noopener noreferrer" target="_blank">Showdown offizielle Webseite</a> Zur Umwandlung von Markdown in HTML</li>
+<li><strong>Showdown Markdown Syntax</strong>: <a href="https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax" rel="noopener noreferrer" target="_blank">Showdown Markdown Syntax</a> Die Markdown Syntax, die von Showdown unterstützt wird</li>
+</ul>
+                </article>
+            </main>
+        </div>
+    </body>
+</html>

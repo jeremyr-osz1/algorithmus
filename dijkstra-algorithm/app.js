@@ -142,7 +142,13 @@ function initGraph() {
  */
 function cacheUi() {
     appState.ui.startSelect = document.getElementById("startSelect");
+    appState.ui.startSelect.addEventListener("change", () => {
+        redrawCurrent();
+    });
     appState.ui.targetSelect = document.getElementById("targetSelect");
+    appState.ui.targetSelect.addEventListener("change", () => {
+        redrawCurrent();
+    });
     appState.ui.showSteps = document.getElementById("showSteps");
     appState.ui.stepDelay = document.getElementById("stepDelay");
     appState.ui.stepDelayValue = document.getElementById("stepDelayValue");
@@ -224,6 +230,12 @@ function onRunClick() {
 
     const startId = Number(appState.ui.startSelect.value);
     const targetId = Number(appState.ui.targetSelect.value);
+    const mode = document.querySelector("input[name='algorithm']:checked").value;
+    
+    if (!mode) {
+        alert("Bitte wählen Sie mindestens einen Algorithmus aus.");
+        return;
+    }
 
     if (startId === targetId) {
         alert("Start- und Zielpunkt müssen unterschiedlich sein.");
@@ -235,7 +247,6 @@ function onRunClick() {
         return;
     }
 
-    const mode = document.querySelector("input[name='algorithm']:checked").value;
     const showSteps = appState.ui.showSteps.checked;
     const delay = Number(appState.ui.stepDelay.value);
 
@@ -452,8 +463,6 @@ function renderGraph(options) {
     const rect = appState.ui.mapInner.getBoundingClientRect();
     drawGraph(ctx, { width: rect.width, height: rect.height }, appState.edges, appState.nodes, appState.positions, options);
 }
-
-
 
 /**
  * Read the currently selected node ids.

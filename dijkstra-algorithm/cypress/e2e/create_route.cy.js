@@ -1,92 +1,154 @@
+const APP_URL = 'http://127.0.0.1:5500/dijkstra-algorithm/index.html';
+const NODE_COUNT = 33;
+const DISTANCE_PATTERN = /^\d+\.\d{3} km$/;
+const TIME_PATTERN = /^\d+\.\d{2} ms$/;
+const EDGE_COUNT_PATTERN = /^\d+$/;
 
-const coordinates = [
-    { id: 0, lat: 51.7715434, lon: 14.3384649 },
-    { id: 1, lat: 51.7713221, lon: 14.3408949 },
-    { id: 2, lat: 51.7696548, lon: 14.3412477 },
-    { id: 3, lat: 51.7711254, lon: 14.3440264 },
-    { id: 4, lat: 51.7705285, lon: 14.350131 },
-    { id: 5, lat: 51.7682279, lon: 14.3576932 },
-    { id: 6, lat: 51.766604, lon: 14.3581074 },
-    { id: 7, lat: 51.7645259, lon: 14.3582908 },
-    { id: 8, lat: 51.7625026, lon: 14.3585917 },
-    { id: 9, lat: 51.7624201, lon: 14.3530582 },
-    { id: 10, lat: 51.7622369, lon: 14.3512985 },
-    { id: 11, lat: 51.7618278, lon: 14.3489667 },
-    { id: 12, lat: 51.7625955, lon: 14.3457449 },
-    { id: 13, lat: 51.7624286, lon: 14.3435046 },
-    { id: 14, lat: 51.7634474, lon: 14.3431303 },
-    { id: 15, lat: 51.7646481, lon: 14.3429569 },
-    { id: 16, lat: 51.7646733, lon: 14.3413606 },
-    { id: 17, lat: 51.7657243, lon: 14.342997 },
-    { id: 18, lat: 51.765716, lon: 14.3416717 },
-    { id: 19, lat: 51.7658011, lon: 14.3470791 },
-    { id: 20, lat: 51.7648394, lon: 14.3470382 },
-    { id: 21, lat: 51.7636765, lon: 14.3472444 },
-    { id: 22, lat: 51.7657976, lon: 14.3491528 },
-    { id: 23, lat: 51.7648185, lon: 14.3492802 },
-    { id: 24, lat: 51.7629565, lon: 14.349629 },
-    { id: 25, lat: 51.7626278, lon: 14.3497847 },
-    { id: 26, lat: 51.7630784, lon: 14.3530594 },
-    { id: 27, lat: 51.763197, lon: 14.3578804 },
-    { id: 28, lat: 51.7644098, lon: 14.3530416 },
-    { id: 29, lat: 51.7647684, lon: 14.35287 },
-    { id: 30, lat: 51.7651805, lon: 14.3527472 },
-    { id: 31, lat: 51.7656119, lon: 14.3540883 },
-    { id: 32, lat: 51.7680772, lon: 14.3568 }
-];
-
-function get_random_point() {
-    const random_index = Math.floor(Math.random() * coordinates.length);
-    return coordinates[random_index];
+function visitApp() {
+    cy.visit(APP_URL);
 }
 
-describe('check amount of points', () => {
-    it('passes', () => {
-        cy.visit('http://127.0.0.1:5500/dijkstra-algorithm/index.html')
-        cy.get('#startSelect option').should('have.length', coordinates.length);
-    })
+function configureRoute({
+    start = '0',
+    target = '32',
+    mode = 'dijkstra',
+    showSteps = false,
+    delay = '0'
+} = {}) {
+    cy.get('#startSelect').select(String(start));
+    cy.get('#targetSelect').select(String(target));
+    cy.get(`input[name="algorithm"][value="${mode}"]`).check();
 
-    it('passes', () => {
-        cy.visit('http://127.0.0.1:5500/dijkstra-algorithm/index.html')
-        cy.get('#targetSelect option').should('have.length', coordinates.length);
-    })
-})
+    if (showSteps) {
+        cy.get('#showSteps').check();
+        cy.get('#stepDelay').invoke('val', String(delay)).trigger('input');
+    } else {
+        cy.get('#showSteps').uncheck();
+    }
+}
 
-describe('test random route dijkstra', () => {
-    it('passes', () => {
-        cy.visit('http://127.0.0.1:5500/dijkstra-algorithm/index.html')
-        const start = get_random_point();
-        const end = get_random_point();
-        cy.get('#startSelect').select(start.id);
-        cy.get('#targetSelect').select(end.id);
-        cy.get('#algoDijkstra').check();
+function runRoute(options = {}) {
+    configureRoute(options);
+    cy.get('#runButton').click();
+}
+
+function assertEmptyStats(prefix) {
+    cy.get(`#${prefix}Distance`).should('have.text', '—');
+    cy.get(`#${prefix}Time`).should('have.text', '—');
+    cy.get(`#${prefix}Edges`).should('have.text', '—');
+}
+
+function assertFilledStats(prefix) {
+    cy.get(`#${prefix}Distance`).invoke('text').should('match', DISTANCE_PATTERN);
+    cy.get(`#${prefix}Time`).invoke('text').should('match', TIME_PATTERN);
+    cy.get(`#${prefix}Edges`).invoke('text').should('match', EDGE_COUNT_PATTERN);
+    cy.get(`#${prefix}Edges`).invoke('text').then((text) => {
+        expect(Number(text)).to.be.greaterThan(0);
+    });
+}
+
+describe('route calculation flows', () => {
+    beforeEach(() => {
+        visitApp();
+    });
+
+    it('shows every graph node in both dropdowns', () => {
+        cy.get('#startSelect option').should('have.length', NODE_COUNT);
+        cy.get('#targetSelect option').should('have.length', NODE_COUNT);
+    });
+
+    it('loads with sensible defaults for route configuration', () => {
+        cy.get('#startSelect').should('have.value', '0');
+        cy.get('#targetSelect').should('have.value', '32');
+        cy.get('#algoDijkstra').should('be.checked');
+        cy.get('#showSteps').should('be.checked');
+        cy.get('#stepDelayValue').should('have.text', '300 ms');
+        assertEmptyStats('dijkstra');
+        assertEmptyStats('astar');
+    });
+
+    it('updates the delay label when the step slider changes', () => {
+        cy.get('#stepDelay').invoke('val', '750').trigger('input');
+        cy.get('#stepDelayValue').should('have.text', '750 ms');
+    });
+
+    it('blocks route calculation when start and target are identical', () => {
+        cy.window().then((win) => {
+            cy.stub(win, 'alert').as('alert');
+        });
+
+        cy.get('#targetSelect').select('0');
         cy.get('#runButton').click();
-        cy.wait(3000);
-    })
-})
 
-describe('test random route astar', () => {
-    it('passes', () => {
-        cy.visit('http://127.0.0.1:5500/dijkstra-algorithm/index.html')
-        const start = get_random_point();
-        const end = get_random_point();
-        cy.get('#startSelect').select(start.id);
-        cy.get('#targetSelect').select(end.id);
-        cy.get('#algoAStar').check();
-        cy.get('#runButton').click();
-        cy.wait(3000);
-    })
-})
+        cy.get('@alert').should('have.been.calledOnceWithExactly', 'Start- und Zielpunkt müssen unterschiedlich sein.');
+        cy.get('#runButton').should('not.be.disabled');
+        assertEmptyStats('dijkstra');
+        assertEmptyStats('astar');
+    });
 
-describe('test random route both', () => {
-    it('passes', () => {
-        cy.visit('http://127.0.0.1:5500/dijkstra-algorithm/index.html')
-        const start = get_random_point();
-        const end = get_random_point();
-        cy.get('#startSelect').select(start.id);
-        cy.get('#targetSelect').select(end.id);
-        cy.get('#algoBoth').check();
+    it('keeps the algorithm selection mutually exclusive', () => {
+        cy.get('#algoDijkstra').should('be.checked');
+        cy.get('#algoAStar').check().should('be.checked');
+        cy.get('#algoDijkstra').should('not.be.checked');
+        cy.get('#algoBoth').check().should('be.checked');
+        cy.get('#algoAStar').should('not.be.checked');
+    });
+    
+    it('calculates and displays stats for Dijkstra\'s algorithm', () => {
+        runRoute({ mode: 'dijkstra', showSteps: false });
+        cy.get('#runButton').should('not.be.disabled');
+        assertFilledStats('dijkstra');
+        assertEmptyStats('astar');
+    });
+
+    it('calculates and displays stats for A* algorithm', () => {
+        runRoute({ mode: 'astar', showSteps: false });
+        cy.get('#runButton').should('not.be.disabled');
+        assertEmptyStats('dijkstra');
+        assertFilledStats('astar');
+    });
+    
+    it('calculates and displays stats for both algorithms in comparison mode', () => {
+        runRoute({ mode: 'both', showSteps: false });
+        cy.get('#runButton').should('not.be.disabled');
+        assertFilledStats('dijkstra');
+        assertFilledStats('astar');
+    });
+
+    it('switches the populated stats when the selected algorithm changes', () => {
+        runRoute({ mode: 'dijkstra', showSteps: false });
+
+        cy.get('#runButton').should('not.be.disabled');
+        assertFilledStats('dijkstra');
+        assertEmptyStats('astar');
+
+        runRoute({ mode: 'astar', showSteps: false });
+
+        cy.get('#runButton').should('not.be.disabled');
+        assertEmptyStats('dijkstra');
+        assertFilledStats('astar');
+    });
+
+    it('shows matching shortest distances for Dijkstra and A* in comparison mode', () => {
+        runRoute({ mode: 'both', showSteps: false });
+
+        assertFilledStats('dijkstra');
+        assertFilledStats('astar');
+
+        cy.get('#dijkstraDistance').invoke('text').then((distance) => {
+            cy.get('#astarDistance').should('have.text', distance);
+        });
+    });
+
+    it('disables the run button during animated visualization and re-enables it afterwards', () => {
+        configureRoute({ mode: 'both', showSteps: true, delay: '50' });
+
         cy.get('#runButton').click();
-        cy.wait(3000);
-    })
-})
+        cy.get('#runButton').should('be.disabled');
+        cy.get('#runButton', { timeout: 10000 }).should('not.be.disabled');
+
+        assertFilledStats('dijkstra');
+        assertFilledStats('astar');
+    });
+});
+

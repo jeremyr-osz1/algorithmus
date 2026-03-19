@@ -8,13 +8,15 @@
         "docs:jsdoc": "jsdoc -c jsdoc.json",
         "docs": "npm run docs:documentation && npm run docs:jsdoc",
         "tests": "cypress run",
-        "test:open": "cypress open"
+        "test:open": "cypress open",
+        "generate-docs": "node docs/generate_docs.js"
     },
     "devDependencies": {
         "documentation": "^14.0.0",
         "jsdoc": "^4.0.2"
     },
     "dependencies": {
-        "cypress": "^15.12.0"
+        "cypress": "^15.12.0",
+        "showdown": "^2.1.0"
     }
 }
