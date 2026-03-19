@@ -140,7 +140,6 @@ function buildDocument(contentHtml, meta) {
             <header class="page-header">
                 <div>
                     <p class="eyebrow">Algorithmus Dokumentation</p>
-                    <p class="page-tagline">Generiertes Benutzerhandbuch fuer die lokale Webanwendung</p>
                 </div>
                 <p class="page-note">Stand: ${escapeHtml(meta.generatedAt)}</p>
             </header>
@@ -150,6 +149,9 @@ function buildDocument(contentHtml, meta) {
 ${contentHtml}
                 </article>
             </main>
+            <div class="footer">
+                <p class="page-tagline"><small>Dieses Dokument wurde mithilfe von <a href="https://github.com/showdownjs/showdown" target="_blank">Showdown.js</a> erstellt</small></p>
+            </div>
         </div>
     </body>
 </html>`;

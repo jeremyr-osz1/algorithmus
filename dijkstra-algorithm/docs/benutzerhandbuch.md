@@ -77,5 +77,5 @@ In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die währen
 - **Node.js**: [Node.js offizielle Webseite](https://nodejs.org/) Zur umwandlung von Markdown in HTML und zur Erstellung der Entwicklerdokumentation
 - **JSdoc**: [JSdoc offizielle Webseite](https://jsdoc.app/) Zur erstellung der Entwicklerdokumentation
 - **Cypress**: [Cypress offizielle Webseite](https://www.cypress.io/) Zur Erstellung von End-to-End Tests (Testing der grafischen Benutzeroberfläche)
-- **Showdown**: [Showdown offizielle Webseite](https://showdownjs.com/) Zur Umwandlung von Markdown in HTML
+- **Showdown**: [Showdown offizielle Webseite](https://github.com/showdownjs/showdown) Zur Umwandlung von Markdown in HTML
 - **Showdown Markdown Syntax**: [Showdown Markdown Syntax](https://github.com/showdownjs/showdown/wiki/Showdown's-Markdown-syntax) Die Markdown Syntax, die von Showdown unterstützt wird

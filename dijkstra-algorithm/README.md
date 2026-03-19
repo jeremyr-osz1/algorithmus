@@ -4,7 +4,12 @@ This is a simple HTML/CSS/JS app to visualize shortest paths using Dijkstra and 
 
 ## Run
 
-Open `index.html` in a browser (local files must be allowed to load the PDF background).
+```bash
+npm install # Install dependencies
+npm start   # Start the app
+```
+
+Despite being a static HTML app, we use a simple Node.js server to serve the files to prevent cors issues when loading the javascript modules.
 
 ## Documentation
 
@@ -18,6 +23,14 @@ npm run docs
 This generates:
 - `docs/documentation` (documentation.js)
 - `docs/jsdoc` (JSDoc)
+
+## Tests
+
+Run Cypress tests:
+
+```bash
+npm run test
+```
 
 ## Data
 
