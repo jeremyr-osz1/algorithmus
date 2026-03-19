@@ -4,7 +4,7 @@ const path = require('path');
 
 const docsDirectory = __dirname;
 const markdownPath = path.join(docsDirectory, 'benutzerhandbuch.md');
-const outputPath = path.join(docsDirectory, 'benutzerhandbuch.html');
+const outputPath = path.join(docsDirectory, 'index.html');
 const stylesheetPath = 'benutzerhandbuch.css';
 
 const converter = new showdown.Converter({

@@ -9,7 +9,7 @@
         "docs": "npm run docs:documentation && npm run docs:jsdoc",
         "tests": "cypress run",
         "test:open": "cypress open",
-        "generate-docs": "node docs/generate_docs.js",
+        "generate-docs": "node docs/benutzerhandbuch/generate_docs.js",
         "start": "serve ."
     },
     "devDependencies": {

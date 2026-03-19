@@ -1039,7 +1039,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line142">line 142</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line143">line 143</a>
     </li></ul></dd>
     
 
@@ -1766,6 +1766,258 @@
     
 
     
+    <h4 class="name" id="drawArc"><span class="type-signature"></span>drawArc<span class="signature">(ctx, center, radius, color, lineWidth, dash)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Draws a _dashed_ arc around a node to highlight it.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ctx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CanvasRenderingContext2D</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The canvas rendering context.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>center</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Object</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The center position of the node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>radius</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The radius of the arc around the node.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>color</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">string</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The color of the arc (e.g., "rgb(249, 150, 25)").</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>lineWidth</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The width of the arc line.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>dash</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Array.&lt;number></span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The dash pattern for the arc (e.g., [4, 2] for 4px dash and 2px gap).</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line148">line 148</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
     <h4 class="name" id="drawEdgeKeys"><span class="type-signature"></span>drawEdgeKeys<span class="signature">(ctx, keys, positions, color, width, dash)</span><span class="type-signature"></span></h4>
     
 
@@ -2299,7 +2551,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line414">line 414</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line426">line 426</a>
     </li></ul></dd>
     
 
@@ -3010,7 +3262,167 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line211">line 211</a>
+        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line317">line 317</a>
+    </li></ul></dd>
+    
+
+    
+
+    
+
+    
+</dl>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+            
+
+    
+
+    
+    <h4 class="name" id="drawLegend"><span class="type-signature"></span>drawLegend<span class="signature">(ctx, height)</span><span class="type-signature"></span></h4>
+    
+
+    
+
+
+
+<div class="description">
+    Draws a legend on the canvas to explain the colors and symbols used in the graph visualization.
+</div>
+
+
+
+
+
+
+
+
+
+    <h5>Parameters:</h5>
+    
+
+<table class="params">
+    <thead>
+    <tr>
+        
+        <th>Name</th>
+        
+
+        <th>Type</th>
+
+        
+
+        
+
+        <th class="last">Description</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    
+
+        <tr>
+            
+                <td class="name"><code>ctx</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">CanvasRenderingContext2D</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The canvas rendering context.</td>
+        </tr>
+
+    
+
+        <tr>
+            
+                <td class="name"><code>height</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last">The height of the canvas.</td>
+        </tr>
+
+    
+    </tbody>
+</table>
+
+
+
+
+
+
+<dl class="details">
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+    <dt class="tag-source">Source:</dt>
+    <dd class="tag-source"><ul class="dummy"><li>
+        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line207">line 207</a>
     </li></ul></dd>
     
 
@@ -3294,7 +3706,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line148">line 148</a>
+        <a href="src_renderer.js.html">src/renderer.js</a>, <a href="src_renderer.js.html#line264">line 264</a>
     </li></ul></dd>
     
 
@@ -3793,7 +4205,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line188">line 188</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line195">line 195</a>
     </li></ul></dd>
     
 
@@ -3881,7 +4293,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line463">line 463</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line473">line 473</a>
     </li></ul></dd>
     
 
@@ -4689,7 +5101,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line132">line 132</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line133">line 133</a>
     </li></ul></dd>
     
 
@@ -4826,7 +5238,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line484">line 484</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line494">line 494</a>
     </li></ul></dd>
     
 
@@ -4932,7 +5344,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line221">line 221</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line228">line 228</a>
     </li></ul></dd>
     
 
@@ -5020,7 +5432,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line399">line 399</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line411">line 411</a>
     </li></ul></dd>
     
 
@@ -5157,7 +5569,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line448">line 448</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line460">line 460</a>
     </li></ul></dd>
     
 
@@ -5245,7 +5657,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line428">line 428</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line440">line 440</a>
     </li></ul></dd>
     
 
@@ -5405,7 +5817,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line291">line 291</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line303">line 303</a>
     </li></ul></dd>
     
 
@@ -5583,7 +5995,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line271">line 271</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line283">line 283</a>
     </li></ul></dd>
     
 
@@ -5689,7 +6101,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line172">line 172</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line179">line 179</a>
     </li></ul></dd>
     
 
@@ -5777,7 +6189,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line162">line 162</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line169">line 169</a>
     </li></ul></dd>
     
 
@@ -5937,7 +6349,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line339">line 339</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line351">line 351</a>
     </li></ul></dd>
     
 
@@ -6025,7 +6437,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line386">line 386</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line398">line 398</a>
     </li></ul></dd>
     
 
@@ -6268,7 +6680,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line214">line 214</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line221">line 221</a>
     </li></ul></dd>
     
 
@@ -6434,7 +6846,7 @@
     
     <dt class="tag-source">Source:</dt>
     <dd class="tag-source"><ul class="dummy"><li>
-        <a href="app.js.html">app.js</a>, <a href="app.js.html#line310">line 310</a>
+        <a href="app.js.html">app.js</a>, <a href="app.js.html#line322">line 322</a>
     </li></ul></dd>
     
 
@@ -6480,13 +6892,13 @@
 </div>
 
 <nav>
-    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aStar">aStar</a></li><li><a href="global.html#adjacencyMatrix">adjacencyMatrix</a></li><li><a href="global.html#buildGraph">buildGraph</a></li><li><a href="global.html#buildPath">buildPath</a></li><li><a href="global.html#cacheUi">cacheUi</a></li><li><a href="global.html#collectStepEdges">collectStepEdges</a></li><li><a href="global.html#computePositions">computePositions</a></li><li><a href="global.html#coordinates">coordinates</a></li><li><a href="global.html#dijkstra">dijkstra</a></li><li><a href="global.html#drawEdgeKeys">drawEdgeKeys</a></li><li><a href="global.html#drawEdges">drawEdges</a></li><li><a href="global.html#drawFinalPaths">drawFinalPaths</a></li><li><a href="global.html#drawGraph">drawGraph</a></li><li><a href="global.html#drawNodes">drawNodes</a></li><li><a href="global.html#drawPath">drawPath</a></li><li><a href="global.html#edgeKey">edgeKey</a></li><li><a href="global.html#fillNodeSelects">fillNodeSelects</a></li><li><a href="global.html#getSelectedIds">getSelectedIds</a></li><li><a href="global.html#haversineKm">haversineKm</a></li><li><a href="global.html#heuristic">heuristic</a></li><li><a href="global.html#initGraph">initGraph</a></li><li><a href="global.html#isNodeValid">isNodeValid</a></li><li><a href="global.html#onRunClick">onRunClick</a></li><li><a href="global.html#redrawCurrent">redrawCurrent</a></li><li><a href="global.html#renderGraph">renderGraph</a></li><li><a href="global.html#resizeCanvas">resizeCanvas</a></li><li><a href="global.html#runAStar">runAStar</a></li><li><a href="global.html#runDijkstra">runDijkstra</a></li><li><a href="global.html#setupResize">setupResize</a></li><li><a href="global.html#setupUi">setupUi</a></li><li><a href="global.html#startAnimation">startAnimation</a></li><li><a href="global.html#stopAnimation">stopAnimation</a></li><li><a href="global.html#toRadians">toRadians</a></li><li><a href="global.html#updateDelayLabel">updateDelayLabel</a></li><li><a href="global.html#updateStats">updateStats</a></li></ul>
+    <h2><a href="index.html">Home</a></h2><h3>Global</h3><ul><li><a href="global.html#aStar">aStar</a></li><li><a href="global.html#adjacencyMatrix">adjacencyMatrix</a></li><li><a href="global.html#buildGraph">buildGraph</a></li><li><a href="global.html#buildPath">buildPath</a></li><li><a href="global.html#cacheUi">cacheUi</a></li><li><a href="global.html#collectStepEdges">collectStepEdges</a></li><li><a href="global.html#computePositions">computePositions</a></li><li><a href="global.html#coordinates">coordinates</a></li><li><a href="global.html#dijkstra">dijkstra</a></li><li><a href="global.html#drawArc">drawArc</a></li><li><a href="global.html#drawEdgeKeys">drawEdgeKeys</a></li><li><a href="global.html#drawEdges">drawEdges</a></li><li><a href="global.html#drawFinalPaths">drawFinalPaths</a></li><li><a href="global.html#drawGraph">drawGraph</a></li><li><a href="global.html#drawLegend">drawLegend</a></li><li><a href="global.html#drawNodes">drawNodes</a></li><li><a href="global.html#drawPath">drawPath</a></li><li><a href="global.html#edgeKey">edgeKey</a></li><li><a href="global.html#fillNodeSelects">fillNodeSelects</a></li><li><a href="global.html#getSelectedIds">getSelectedIds</a></li><li><a href="global.html#haversineKm">haversineKm</a></li><li><a href="global.html#heuristic">heuristic</a></li><li><a href="global.html#initGraph">initGraph</a></li><li><a href="global.html#isNodeValid">isNodeValid</a></li><li><a href="global.html#onRunClick">onRunClick</a></li><li><a href="global.html#redrawCurrent">redrawCurrent</a></li><li><a href="global.html#renderGraph">renderGraph</a></li><li><a href="global.html#resizeCanvas">resizeCanvas</a></li><li><a href="global.html#runAStar">runAStar</a></li><li><a href="global.html#runDijkstra">runDijkstra</a></li><li><a href="global.html#setupResize">setupResize</a></li><li><a href="global.html#setupUi">setupUi</a></li><li><a href="global.html#startAnimation">startAnimation</a></li><li><a href="global.html#stopAnimation">stopAnimation</a></li><li><a href="global.html#toRadians">toRadians</a></li><li><a href="global.html#updateDelayLabel">updateDelayLabel</a></li><li><a href="global.html#updateStats">updateStats</a></li></ul>
 </nav>
 
 <br class="clear">
 
 <footer>
-    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Mon Mar 16 2026 11:00:01 GMT+0100 (Mitteleuropäische Normalzeit)
+    Documentation generated by <a href="https://github.com/jsdoc/jsdoc">JSDoc 4.0.5</a> on Thu Mar 19 2026 12:29:41 GMT+0100 (Mitteleuropäische Normalzeit)
 </footer>
 
 <script> prettyPrint(); </script>

@@ -359,6 +359,26 @@
               
                 
                 <li><a
+                  href='#drawarc'
+                  class="">
+                  drawArc
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#drawlegend'
+                  class="">
+                  drawLegend
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#drawnodes'
                   class="">
                   drawNodes
@@ -2826,6 +2846,190 @@ Note: The CSV header says lon;lat, but values are lat;lon.</p>
           <div>
             <span class='code bold'>width</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
 	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='drawarc'>
+      drawArc
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Draws a <em>dashed</em> arc around a node to highlight it.</p>
+
+    <div class='pre p1 fill-light mt0'>drawArc(ctx: <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D">CanvasRenderingContext2D</a>, center: {x: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, y: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>}, radius: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, color: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>, lineWidth: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, dash: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>ctx</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D">CanvasRenderingContext2D</a>)</code>
+	    The canvas rendering context.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>center</span> <code class='quiet'>({x: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>, y: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>})</code>
+	    The center position of the node.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>radius</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The radius of the arc around the node.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>color</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    The color of the arc (e.g., "rgb(249, 150, 25)").
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>lineWidth</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>
+            = <code>2</code>)</code>
+	    The width of the arc line.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>dash</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>>
+            = <code>[0,0]</code>)</code>
+	    The dash pattern for the arc (e.g., [4, 2] for 4px dash and 2px gap).
+
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+          
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='drawlegend'>
+      drawLegend
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>Draws a legend on the canvas to explain the colors and symbols used in the graph visualization.</p>
+
+    <div class='pre p1 fill-light mt0'>drawLegend(ctx: <a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D">CanvasRenderingContext2D</a>, height: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</div>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>ctx</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/API/CanvasRenderingContext2D">CanvasRenderingContext2D</a>)</code>
+	    The canvas rendering context.
+
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>height</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>)</code>
+	    The height of the canvas.
+
           </div>
           
         </div>
