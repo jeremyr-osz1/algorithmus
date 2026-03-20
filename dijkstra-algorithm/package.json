@@ -12,7 +12,7 @@
         "generate-manual": "node docs/benutzerhandbuch/generate-manual.js",
         "generate-testcatalog": "node docs/testkatalog/generate-testcatalog.js",
         "start": "serve .",
-        "generate": "npm run docs && npm run generate-manual && npm run generate-testcatalog",
+        "generate": "npm run docs && npm run generate-manual && npm run generate-testcatalog"
     },
     "devDependencies": {
         "documentation": "^14.0.0",
