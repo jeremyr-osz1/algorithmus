@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="de">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Testkatalog - Testkatalog Mini-Projekt “Kürzester Weg”</title>
+        <link rel="stylesheet" href="testkatalog.css" />
+    </head>
+    <body>
+        <div class="page">
+            <header class="page-header">
+                <div>
+                    <p class="eyebrow">Routenberechnung Testkatalog</p>
+                </div>
+                <p class="page-note">Stand: 20. März 2026 um 10:02</p>
+            </header>
+
+            <main class="doc-shell">
+                <article class="markdown-body">
+<h1 id="testkatalog">Testkatalog</h1>
+<h2 id="testkatalog-mini-projekt-kuerzester-weg">Testkatalog Mini-Projekt “Kürzester Weg”</h2>
+<p><strong>Funktionale Anforderungen:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr</th>
+<th>Anforderung</th>
+<th>Erwartetes Ergebnis</th>
+<th>Tatsächliches Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>F1</td>
+<td>Die GUI soll eine Auswahl für Startpunkt und Zielpunkt anbieten.</td>
+<td>Beide Dropdowns sind sichtbar und auswählbar.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F2</td>
+<td>Die Software soll den Dijkstra-Algorithmus auswählbar machen.</td>
+<td>Nach Auswahl von Dijkstra wird die Route mit Dijkstra berechnet.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F3</td>
+<td>Die Software soll den A*-Algorithmus auswählbar machen.</td>
+<td>Nach Auswahl von A* wird die Route mit A* berechnet.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F4</td>
+<td>Die Software soll einen Vergleich beider Algorithmen ermöglichen.</td>
+<td>Bei Auswahl „Beide“ werden Ergebnisse von Dijkstra und A* angezeigt.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F5</td>
+<td>Die Software soll nach Klick auf „Berechnung starten“ eine Route berechnen.</td>
+<td>Eine gültige Route wird auf der Karte dargestellt.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F6</td>
+<td>Die Software soll Zwischenschritte anzeigen können.</td>
+<td>Aktivierte Option zeigt die schrittweise Visualisierung der Berechnung.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F7</td>
+<td>Die Software soll die Geschwindigkeit der Visualisierung einstellbar machen.</td>
+<td>Der Regler verändert die Zeit zwischen den Schritten.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>F8</td>
+<td>Die Software soll Ergebnisse und Statistik anzeigen.</td>
+<td>Distanz, Rechenzeit und untersuchte Kanten werden korrekt ausgegeben.</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Nicht-Funktionale Anforderungen:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Nr.</th>
+<th>Anforderung</th>
+<th>Erwartetes Ergebnis</th>
+<th>Tatsächliches Ergebnis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>NF1</td>
+<td>Die Benutzeroberfläche soll einfach und übersichtlich sein.</td>
+<td>Nutzer findet Start, Ziel, Algorithmus und Button schnell.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>NF2</td>
+<td>Die Software soll verständlich bedienbar sein.</td>
+<td>Beschriftungen wie „Startpunkt“, „Zielpunkt“ und „Berechnung starten“ sind klar.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>NF3</td>
+<td>Die Berechnung soll schnell reagieren.</td>
+<td>Nach dem Start erscheint das Ergebnis ohne störende Wartezeit.</td>
+<td>✓</td>
+</tr>
+<tr>
+<td>NF4</td>
+<td>Die Darstellung soll stabil und fehlerfrei laufen.</td>
+<td>Keine Abstürze, keine falsche Anzeige, keine leeren Felder ohne Grund.</td>
+<td>✓</td>
+</tr>
+</tbody>
+</table>
+                </article>
+            </main>
+            <div class="footer">
+                <p class="page-tagline"><small>Dieses Dokument wurde mithilfe von <a href="https://github.com/showdownjs/showdown" target="_blank">Showdown.js</a> erstellt</small></p>
+            </div>
+        </div>
+    </body>
+</html>

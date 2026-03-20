@@ -3,9 +3,9 @@ const fs = require('fs');
 const path = require('path');
 
 const docsDirectory = __dirname;
-const markdownPath = path.join(docsDirectory, 'benutzerhandbuch.md');
+const markdownPath = path.join(docsDirectory, 'testkatalog.md');
 const outputPath = path.join(docsDirectory, 'index.html');
-const stylesheetPath = 'benutzerhandbuch.css';
+const stylesheetPath = 'testkatalog.css';
 
 const converter = new showdown.Converter({
     customizedHeaderId: true,
@@ -139,7 +139,7 @@ function buildDocument(contentHtml, meta) {
         <div class="page">
             <header class="page-header">
                 <div>
-                    <p class="eyebrow">Routenberechnung Benutzerhandbuch</p>
+                    <p class="eyebrow">Routenberechnung Testkatalog</p>
                 </div>
                 <p class="page-note">Stand: ${escapeHtml(meta.generatedAt)}</p>
             </header>
@@ -157,15 +157,15 @@ ${contentHtml}
 </html>`;
 }
 
-const benutzerhandbuchMarkdown = fs.readFileSync(markdownPath, 'utf-8');
+const testkatalogMarkdown = fs.readFileSync(markdownPath, 'utf-8');
 const preparedMarkdown = addHeadingIds(
-    normalizeInternalLinks(transformImages(benutzerhandbuchMarkdown))
+    normalizeInternalLinks(transformImages(testkatalogMarkdown))
 );
 
-const benutzerhandbuchHtml = converter.makeHtml(preparedMarkdown);
-const documentHtml = buildDocument(benutzerhandbuchHtml, {
-    title: extractFirstHeading(benutzerhandbuchMarkdown, 1) || 'Benutzerhandbuch',
-    subtitle: extractFirstHeading(benutzerhandbuchMarkdown, 2),
+const testkatalogHtml = converter.makeHtml(preparedMarkdown);
+const documentHtml = buildDocument(testkatalogHtml, {
+    title: extractFirstHeading(testkatalogMarkdown, 1) || 'testkatalog',
+    subtitle: extractFirstHeading(testkatalogMarkdown, 2),
     generatedAt: new Intl.DateTimeFormat('de-DE', {
         dateStyle: 'long',
         timeStyle: 'short'

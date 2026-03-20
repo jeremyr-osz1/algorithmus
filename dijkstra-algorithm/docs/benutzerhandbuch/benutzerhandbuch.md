@@ -6,9 +6,10 @@
 ## Inhaltsverzeichnis
 
 0. [Abbildungsverzeichnis](#abbildungsverzeichnis)
-1. [Menüelemente erklärt](#1-menüelemente-erklärt)
-2. [Fehlermeldungen](#2-fehlermeldungen)
-3. [Quellenangaben](#3-quellenangaben)
+1. [Ausführung](#0-ausführung)
+2. [Menüelemente erklärt](#1-menüelemente-erklärt)
+3. [Fehlermeldungen](#2-fehlermeldungen)
+4. [Quellenangaben](#3-quellenangaben)
 
 ## Abbildungsverzeichnis
 
@@ -18,8 +19,21 @@
 4. [Screenshot Visualisierung](#image-screenshot-visualisierung)
 5. [Screenshot Routeninformationen](#image-screenshot-routeninformationen)
 
+## 1 Ausführung
 
-## 1 Menüelemente erklärt
+Damit das Programm ausgeführt werden kann, müssen zunächste alle benötigten Pakete installiert werden. Dies kann mit dem folgenden Befehl im Terminal gemacht werden:
+
+```bash
+npm install
+```
+
+Nachdem alle Pakete installiert wurden, kann die Anwendung mit dem folgenden Befehl gestartet werden:
+
+```bash
+npm start
+```
+
+## 2 Menüelemente erklärt
 
 Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum einem der Name der Anwendung 
 "Routenberechnung - Dijkstra & A*" und zum anderen befinden sich dort Links zu wichtigen Dokumentationen des Projekts, wie z.B. die Entwicklerdokumentation und dieses Benutzerhandbuch. (siehe [Screenshot Header](#image-screenshot-header))
@@ -27,6 +41,7 @@ Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum eine
 **Header**:
 - **JSdoc verlinkung**: Ein Link zur Dokumentation des Projekts, erstellt mit JSdoc
 - **Benutzerhandbuch**: Ein Link zu diesem Benutzerhandbuch, damit Nutzer schnell darauf zugreifen können  
+- **Testkatalog**: Ein Link zum Testkatalog
 
 ![Screenshot Header](images/header.png =600x100)
 
@@ -60,7 +75,7 @@ Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum eine
 
 --- 
 
-## 2 Fehlermeldungen
+## 3 Fehlermeldungen
 
 In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die während der Nutzung der Routenberechnung auftreten können:
 
@@ -70,7 +85,7 @@ In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die währen
 
 --- 
 
-## 3 Quellenangaben
+## 4 Quellenangaben
 
 - **Dijkstra-Algorithmus**: [Wikipedia - Dijkstra-Algorithmus](https://de.wikipedia.org/wiki/Dijkstra-Algorithmus)
 - **A* Algorithmus**: [Wikipedia - A* Algorithmus](https://de.wikipedia.org/wiki/A*-Algorithmus)
