@@ -5,11 +5,15 @@
 
 ## Inhaltsverzeichnis
 
-0. [Abbildungsverzeichnis](#abbildungsverzeichnis)
-1. [Ausführung](#0-ausführung)
-2. [Menüelemente erklärt](#1-menüelemente-erklärt)
-3. [Fehlermeldungen](#2-fehlermeldungen)
-4. [Quellenangaben](#3-quellenangaben)
+- [Abbildungsverzeichnis](#abbildungsverzeichnis)
+- [1 Einleitung](#1-einleitung)
+    - [1.1 Kurzbeschreibung des Produkts](#1-1-kurzbeschreibung-des-produkts)
+- [2 Installationsanleitung](#2-installationsanleitung)
+    - [2.1 Systemvoraussetzungen](#2-1-systemvoraussetzungen)
+    - [2.2 Ausführung](#2-2-ausführung)
+- [3 Benutzeroberfläche](#3-benutzeroberflaeche)
+- [4 Fehlermeldungen](#4-fehlermeldungen)
+- [5 Quellenangaben](#5-quellenangaben)
 
 ## Abbildungsverzeichnis
 
@@ -19,7 +23,25 @@
 4. [Screenshot Visualisierung](#image-screenshot-visualisierung)
 5. [Screenshot Routeninformationen](#image-screenshot-routeninformationen)
 
-## 1 Ausführung
+## 1 Einleitung
+
+In diesem Benutzerhandbuch wird die Nutzung der Routenberechnung mit dem Dijkstra und A* Algorithmus erklärt. Mit diesem Tool kann die kürzeste Route zwischen einem Start- und einem Zielpunkt berechnet werden, indem entweder der Dijkstra-Algorithmus, der A* Algorithmus oder beide Algorithmen zum Vergleich ausgewählt werden.
+
+Es werden die Systemvoraussetzungen, die Ausführung der Anwendung, die verschiedenen Menüelemente und mögliche Fehlermeldungen erläutert. Ziel dieses Handbuchs ist es, eine einfache und verständliche Anleitung zur Nutzung der Routenberechnung zu bieten.
+
+### 1.1 Kurzbeschreibung des Produkts
+
+Diese Anwendung ist eine webbasierte Software zur Routenberechnung und Visualisierung von kürzesten Wegen in einem vorausgewählten Graphen. Sie dient dazu den Dijkstra und A* Algorithmus anzuwenden und deren Ergebnisse miteinander zu vergleichen. Sie richtet sich an alle, die die Grundlagen der Pfadfindung verstehen, demonstrieren oder testen möchten.
+
+## 2 Installationsanleitung
+
+### 2.1 Systemvoraussetzungen
+
+Um die Routenberechnung mit dem Dijkstra und A* Algorithmus nutzen zu können, müssen folgende Systemvoraussetzungen erfüllt sein:
+- **Node.js**: Die Anwendung benötigt Node.js, um die benötigten Pakete zu installieren und die Anwendung auszuführen. Node.js kann von der offiziellen Webseite [Node.js offizielle Webseite](https://nodejs.org/) heruntergeladen und installiert werden.
+- **Internetverbindung**: Eine Internetverbindung ist erforderlich, um die benötigten Pakete zu installieren.
+
+### 2.2 Ausführung
 
 Damit das Programm ausgeführt werden kann, müssen zunächste alle benötigten Pakete installiert werden. Dies kann mit dem folgenden Befehl im Terminal gemacht werden:
 
@@ -33,13 +55,13 @@ Nachdem alle Pakete installiert wurden, kann die Anwendung mit dem folgenden Bef
 npm start
 ```
 
-## 2 Menüelemente erklärt
+## 3 Benutzeroberfläche
 
 Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum einem der Name der Anwendung 
-"Routenberechnung - Dijkstra & A*" und zum anderen befinden sich dort Links zu wichtigen Dokumentationen des Projekts, wie z.B. die Entwicklerdokumentation und dieses Benutzerhandbuch. (siehe [Screenshot Header](#image-screenshot-header))
+"Routenberechnung - Dijkstra & A*" und zum anderen befinden sich dort Links zu wichtigen Dokumentationen des Projekts, wie z.B. die Entwicklerdokumentation, der Testkatalog und dieses Benutzerhandbuch. (siehe [Screenshot Header](#image-screenshot-header))
 
 **Header**:
-- **JSdoc verlinkung**: Ein Link zur Dokumentation des Projekts, erstellt mit JSdoc
+- **Entwicklerdokumentation**: Ein Link zur Dokumentation des Projekts, erstellt mit JSdoc
 - **Benutzerhandbuch**: Ein Link zu diesem Benutzerhandbuch, damit Nutzer schnell darauf zugreifen können  
 - **Testkatalog**: Ein Link zum Testkatalog
 
@@ -75,7 +97,7 @@ Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum eine
 
 --- 
 
-## 3 Fehlermeldungen
+## 4 Fehlermeldungen
 
 In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die während der Nutzung der Routenberechnung auftreten können:
 
@@ -85,7 +107,7 @@ In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die währen
 
 --- 
 
-## 4 Quellenangaben
+## 5 Quellenangaben
 
 - **Dijkstra-Algorithmus**: [Wikipedia - Dijkstra-Algorithmus](https://de.wikipedia.org/wiki/Dijkstra-Algorithmus)
 - **A* Algorithmus**: [Wikipedia - A* Algorithmus](https://de.wikipedia.org/wiki/A*-Algorithmus)

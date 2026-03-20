@@ -9,10 +9,10 @@
         "docs": "npm run docs:documentation && npm run docs:jsdoc",
         "tests": "cypress run",
         "test:open": "cypress open",
-        "generate-docs": "node docs/benutzerhandbuch/generate_docs.js",
-        "generate-testkatalog": "node docs/testkatalog/generate_testkatalog.js",
+        "generate-manual": "node docs/benutzerhandbuch/generate-manual.js",
+        "generate-testcatalog": "node docs/testkatalog/generate-testcatalog.js",
         "start": "serve .",
-        "generate": "npm run docs && npm run generate-docs && npm run generate-testkatalog"
+        "generate": "npm run docs && npm run generate-manual && npm run generate-testcatalog",
     },
     "devDependencies": {
         "documentation": "^14.0.0",

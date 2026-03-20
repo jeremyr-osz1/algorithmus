@@ -155,7 +155,6 @@ body::before {
 
 .markdown-body h3 {
     margin: 2rem 0 0.75rem;
-    color: var(--accent);
     font-size: 1.45rem;
 }
 
@@ -187,6 +186,19 @@ body::before {
 .markdown-body ul,
 .markdown-body ol {
     padding-left: 1.25rem;
+    list-style: none;
+}
+
+.markdown-body li ul,
+.markdown-body li ol {
+    padding-left: 1.25rem;
+    padding-top: 1rem;
+    list-style: none;
+}
+
+.markdown-body ul:last-child,
+.markdown-body ol:last-child {
+    margin-bottom: 0;
 }
 
 .markdown-body li {
@@ -279,20 +291,26 @@ body::before {
     border-bottom: 0;
 }
 
-.markdown-body #inhaltsverzeichnis + ol {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+.markdown-body #inhaltsverzeichnis + ol,
+.markdown-body #inhaltsverzeichnis + ul {
     gap: 12px;
     padding: 0;
     list-style: none;
 }
 
-.markdown-body #inhaltsverzeichnis + ol li {
+.markdown-body #inhaltsverzeichnis + ol li,
+.markdown-body #inhaltsverzeichnis + ul li {
     margin: 0;
     padding: 0;
+    padding-bottom: 1rem;
+}
+.markdown-body #inhaltsverzeichnis + ol li:last-child,
+.markdown-body #inhaltsverzeichnis + ul li:last-child {
+    padding-bottom: 0;
 }
 
-.markdown-body #inhaltsverzeichnis + ol a {
+.markdown-body #inhaltsverzeichnis + ol a,
+.markdown-body #inhaltsverzeichnis + ul a {
     display: block;
     height: 100%;
     padding: 14px 16px;
@@ -304,7 +322,8 @@ body::before {
     box-shadow: 0 10px 24px rgba(84, 60, 32, 0.08);
 }
 
-.markdown-body #inhaltsverzeichnis + ol a:hover {
+.markdown-body #inhaltsverzeichnis + ol a:hover,
+.markdown-body #inhaltsverzeichnis + ul a:hover {
     color: var(--accent-strong);
     border-color: rgba(194, 65, 12, 0.24);
 }

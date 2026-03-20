@@ -12,7 +12,7 @@
                 <div>
                     <p class="eyebrow">Routenberechnung Benutzerhandbuch</p>
                 </div>
-                <p class="page-note">Stand: 20. März 2026 um 10:02</p>
+                <p class="page-note">Stand: 20. März 2026 um 11:57</p>
             </header>
 
             <main class="doc-shell">
@@ -21,13 +21,17 @@
 <h2 id="routenberechnung-mit-dem-dijkstra-und-a-star-algorithmus">Routenberechnung mit dem Dijkstra und A* Algorithmus</h2>
 <hr />
 <h2 id="inhaltsverzeichnis">Inhaltsverzeichnis</h2>
-<ol start="0">
+<ul>
 <li><a href="#abbildungsverzeichnis">Abbildungsverzeichnis</a></li>
-<li><a href="#0-ausfuehrung">Ausführung</a></li>
-<li><a href="#1-menueelemente-erklaert">Menüelemente erklärt</a></li>
-<li><a href="#2-fehlermeldungen">Fehlermeldungen</a></li>
-<li><a href="#3-quellenangaben">Quellenangaben</a></li>
-</ol>
+<li><a href="#1-einleitung">1 Einleitung</a><ul>
+<li><a href="#1-1-kurzbeschreibung-des-produkts">1.1 Kurzbeschreibung des Produkts</a></li></ul></li>
+<li><a href="#2-installationsanleitung">2 Installationsanleitung</a><ul>
+<li><a href="#2-1-systemvoraussetzungen">2.1 Systemvoraussetzungen</a></li>
+<li><a href="#2-2-ausfuehrung">2.2 Ausführung</a></li></ul></li>
+<li><a href="#3-benutzeroberflaeche">3 Benutzeroberfläche</a></li>
+<li><a href="#4-fehlermeldungen">4 Fehlermeldungen</a></li>
+<li><a href="#5-quellenangaben">5 Quellenangaben</a></li>
+</ul>
 <h2 id="abbildungsverzeichnis">Abbildungsverzeichnis</h2>
 <ol>
 <li><a href="#image-screenshot-header">Screenshot Header</a></li>
@@ -36,19 +40,31 @@
 <li><a href="#image-screenshot-visualisierung">Screenshot Visualisierung</a></li>
 <li><a href="#image-screenshot-routeninformationen">Screenshot Routeninformationen</a></li>
 </ol>
-<h2 id="1-ausfuehrung">1 Ausführung</h2>
+<h2 id="1-einleitung">1 Einleitung</h2>
+<p>In diesem Benutzerhandbuch wird die Nutzung der Routenberechnung mit dem Dijkstra und A* Algorithmus erklärt. Mit diesem Tool kann die kürzeste Route zwischen einem Start- und einem Zielpunkt berechnet werden, indem entweder der Dijkstra-Algorithmus, der A* Algorithmus oder beide Algorithmen zum Vergleich ausgewählt werden.</p>
+<p>Es werden die Systemvoraussetzungen, die Ausführung der Anwendung, die verschiedenen Menüelemente und mögliche Fehlermeldungen erläutert. Ziel dieses Handbuchs ist es, eine einfache und verständliche Anleitung zur Nutzung der Routenberechnung zu bieten.</p>
+<h3 id="1-1-kurzbeschreibung-des-produkts">1.1 Kurzbeschreibung des Produkts</h3>
+<p>Diese Anwendung ist eine webbasierte Software zur Routenberechnung und Visualisierung von kürzesten Wegen in einem vorausgewählten Graphen. Sie dient dazu den Dijkstra und A* Algorithmus anzuwenden und deren Ergebnisse miteinander zu vergleichen. Sie richtet sich an alle, die die Grundlagen der Pfadfindung verstehen, demonstrieren oder testen möchten.</p>
+<h2 id="2-installationsanleitung">2 Installationsanleitung</h2>
+<h3 id="2-1-systemvoraussetzungen">2.1 Systemvoraussetzungen</h3>
+<p>Um die Routenberechnung mit dem Dijkstra und A* Algorithmus nutzen zu können, müssen folgende Systemvoraussetzungen erfüllt sein:</p>
+<ul>
+<li><strong>Node.js</strong>: Die Anwendung benötigt Node.js, um die benötigten Pakete zu installieren und die Anwendung auszuführen. Node.js kann von der offiziellen Webseite <a href="https://nodejs.org/" rel="noopener noreferrer" target="_blank">Node.js offizielle Webseite</a> heruntergeladen und installiert werden.</li>
+<li><strong>Internetverbindung</strong>: Eine Internetverbindung ist erforderlich, um die benötigten Pakete zu installieren.</li>
+</ul>
+<h3 id="2-2-ausfuehrung">2.2 Ausführung</h3>
 <p>Damit das Programm ausgeführt werden kann, müssen zunächste alle benötigten Pakete installiert werden. Dies kann mit dem folgenden Befehl im Terminal gemacht werden:</p>
 <pre><code class="bash language-bash">npm install
 </code></pre>
 <p>Nachdem alle Pakete installiert wurden, kann die Anwendung mit dem folgenden Befehl gestartet werden:</p>
 <pre><code class="bash language-bash">npm start
 </code></pre>
-<h2 id="2-menueelemente-erklaert">2 Menüelemente erklärt</h2>
+<h2 id="3-benutzeroberflaeche">3 Benutzeroberfläche</h2>
 <p>Im oben Bereich der Anwendung befindet sich der Header. In diesem steht zum einem der Name der Anwendung <br />
-"Routenberechnung - Dijkstra &amp; A*" und zum anderen befinden sich dort Links zu wichtigen Dokumentationen des Projekts, wie z.B. die Entwicklerdokumentation und dieses Benutzerhandbuch. (siehe <a href="#image-screenshot-header">Screenshot Header</a>)</p>
+"Routenberechnung - Dijkstra &amp; A*" und zum anderen befinden sich dort Links zu wichtigen Dokumentationen des Projekts, wie z.B. die Entwicklerdokumentation, der Testkatalog und dieses Benutzerhandbuch. (siehe <a href="#image-screenshot-header">Screenshot Header</a>)</p>
 <p><strong>Header</strong>:</p>
 <ul>
-<li><strong>JSdoc verlinkung</strong>: Ein Link zur Dokumentation des Projekts, erstellt mit JSdoc</li>
+<li><strong>Entwicklerdokumentation</strong>: Ein Link zur Dokumentation des Projekts, erstellt mit JSdoc</li>
 <li><strong>Benutzerhandbuch</strong>: Ein Link zu diesem Benutzerhandbuch, damit Nutzer schnell darauf zugreifen können  </li>
 <li><strong>Testkatalog</strong>: Ein Link zum Testkatalog</li>
 </ul>
@@ -81,7 +97,7 @@
 </ul>
 <figure class="doc-figure"><img src="images/routeninformationen.png" alt="Screenshot Routeninformationen" id="image-screenshot-routeninformationen" loading="lazy" /><figcaption>Screenshot Routeninformationen</figcaption></figure>
 <hr />
-<h2 id="3-fehlermeldungen">3 Fehlermeldungen</h2>
+<h2 id="4-fehlermeldungen">4 Fehlermeldungen</h2>
 <p>In diesem Abschnitt werden alle möglichen Fehlermeldungen erklärt, die während der Nutzung der Routenberechnung auftreten können:</p>
 <ul>
 <li><strong>Ausgewählte Start- oder Zielpunkt-ID ist ungültig.</strong>: Diese Fehlermeldung erscheint, wenn die ausgewählten Start- oder Zielpunkt-IDs nicht gültig sind, z.B. wenn sie außerhalb des Bereichs der verfügbaren Punkte liegen.</li>
@@ -89,7 +105,7 @@
 <li><strong>Start- und Zielpunkt müssen unterschiedlich sein.</strong>: Diese Fehlermeldung erscheint, wenn der Benutzer versucht, die Routenberechnung zu starten, aber der ausgewählte Startpunkt und Zielpunkt identisch sind.</li>
 </ul>
 <hr />
-<h2 id="4-quellenangaben">4 Quellenangaben</h2>
+<h2 id="5-quellenangaben">5 Quellenangaben</h2>
 <ul>
 <li><strong>Dijkstra-Algorithmus</strong>: <a href="https://de.wikipedia.org/wiki/Dijkstra-Algorithmus" rel="noopener noreferrer" target="_blank">Wikipedia - Dijkstra-Algorithmus</a></li>
 <li><strong>A* Algorithmus</strong>: <a href="https://de.wikipedia.org/wiki/A*-Algorithmus" rel="noopener noreferrer" target="_blank">Wikipedia - A* Algorithmus</a></li>

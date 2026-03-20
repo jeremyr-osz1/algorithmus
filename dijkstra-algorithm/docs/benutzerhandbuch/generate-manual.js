@@ -53,8 +53,9 @@ function escapeHtml(value) {
 
 /**
  * Adds unique IDs to all headings in the markdown for easier linking.
+ * e.g. converts ## Some Heading to ## Some Heading {#some-heading} for linking and navigation.
  * @param {String} markdown 
- * @returns {String} 
+ * @returns {String}
  */
 function addHeadingIds(markdown) {
     return markdown.replace(/^(#{1,6})\s+(.+)$/gm, (match, hashes, headingText) => {
@@ -70,6 +71,7 @@ function addHeadingIds(markdown) {
 
 /**
  * Normalizes internal links in the markdown to use URL-friendly slugs.
+ * e.g. converts [Link](#Some Heading) to [Link](#some-heading) for linking to headings with generated IDs.
  * @param {String} markdown 
  * @returns {String}
  */
